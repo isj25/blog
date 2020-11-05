@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs'); -%>
+
+<p><%=homeContent%></p>
+    <% for(let i =0;i<post.length;i++){%>
+
+    <h3><span><%=i+1%>. </span><%=post[i].title%></h3>
+    <% if(post[i].body.length>100){%>
+        <p><%=post[i].body.substring(0,100)+"..."%>
+        <a href="/post/<%=post[i].title%>">Read More ..</a></p>
+   <% }else{%>
+    <p><%=post[i].body%></p>
+     <%}%>
+    <%}%>
+
+<%- include('partials/footer'); -%>
